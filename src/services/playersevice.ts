@@ -6,7 +6,7 @@ class PlayersService {
 
     async getAll() {
         try {
-            const playersAll = await PlayerModel.find().sort({wins: -1,  name: 1});
+            const playersAll = await PlayerModel.find().sort({wins: -1, losses: 1});
             return playersAll;
         } catch (error) {
             console.log(error)

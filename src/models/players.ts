@@ -37,10 +37,11 @@ const PlayerSchema = new Schema<Player>(
 
 
 PlayerSchema.virtual('winrate').get(function(){
-    const result = (Number(this.wins) / ( Number(this.wins) + Number(this.losses) ) * 100)
-    return result + '%'
+    const result = Math.trunc((Number(this.wins) / ( Number(this.wins) + Number(this.losses) ) * 100)) + '%'
+    return result
     
 })
+
 
 
 
